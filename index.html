@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página Personal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .container {
+            text-align: center;
+            max-width: 800px;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        
+        .logo-container {
+            margin-bottom: 30px;
+        }
+        
+        .logo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+        
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            background: linear-gradient(45deg, #ff8a00, #e52e71);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            min-width: 180px;
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .content {
+            display: none;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            margin-top: 20px;
+            text-align: left;
+        }
+        
+        .active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #00c853, #64dd17);
+            padding: 12px 25px;
+            border-radius: 50px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .download-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 200, 83, 0.4);
+        }
+        
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #333, #555);
+            color: white;
+            font-size: 30px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        .youtube { background: linear-gradient(45deg, #ff0000, #cc0000); }
+        .discord { background: linear-gradient(45deg, #7289da, #5a6ecc); }
+        .twitch { background: linear-gradient(45deg, #9146ff, #772ce8); }
+        
+        h2 {
+            margin-bottom: 15px;
+            font-size: 28px;
+            border-bottom: 2px solid white;
+            padding-bottom: 10px;
+        }
+        
+        p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        
+        @media (max-width: 600px) {
+            .buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 250px;
+            }
+            
+            .social-buttons {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <!-- Reemplaza "logo.png" con la ruta a tu imagen -->
+            <img src="logo.png" alt="Logo" class="logo">
+        </div>
+        
+        <div class="buttons">
+            <button class="btn" onclick="showContent('proyectos')">Proyectos</button>
+            <button class="btn" onclick="showContent('sobre-mi')">Sobre Mí</button>
+            <button class="btn" onclick="showContent('redes')">Redes Sociales</button>
+        </div>
+        
+        <div id="proyectos" class="content">
+            <h2>Proyecto: Super Mystery Maker</h2>
+            <p>Super Mystery Maker es un fangame de Mario Maker 2 que incluye características que no encontrarás en los juegos oficiales de Mario Maker. Con nuevos elementos, mecánicas de juego únicas y una experiencia completamente renovada, este juego lleva la creatividad a un nivel superior.</p>
+            <p>Características principales:</p>
+            <ul>
+                <li>Nuevos enemigos y jefes exclusivos</li>
+                <li>Mecánicas de juego innovadoras</li>
+                <li>Elementos personalizados no disponibles en Mario Maker 2</li>
+                <li>Niveles con puzzles únicos y desafiantes</li>
+                <li>Modo historia con narrativa original</li>
+            </ul>
+            <a href="https://drive.google.com/uc?export=download&id=17GoyGRTHaQ3exOD76_udqhXfV8M1Efpv" class="download-btn">Descargar Juego</a>
+        </div>
+        
+        <div id="sobre-mi" class="content">
+            <h2>Sobre Mí</h2>
+            <p>Texto de ejemplo: Soy un apasionado desarrollador de videojuegos con especial interés en la creación de experiencias innovadoras que expandan los límites de los juegos tradicionales. Mi objetivo es siempre ofrecer contenido fresco y emocionante para los jugadores.</p>
+            <p>Con más de 5 años de experiencia en el desarrollo independiente, he trabajado en diversos proyectos que combinan mechanics clásicas con ideas originales. Super Mystery Maker representa mi proyecto más ambicioso hasta la fecha.</p>
+            <p>Cuando no estoy programando o diseñando niveles, me gusta participar en comunidades de gaming, aprender nuevas técnicas de desarrollo y estudiar los juegos clásicos para encontrar inspiración.</p>
+        </div>
+        
+        <div id="redes" class="content">
+            <h2>Redes Sociales</h2>
+            <p>¡Sígueme en mis redes sociales para estar al tanto de mis últimos proyectos y updates!</p>
+            <div class="social-buttons">
+                <a href="#" class="social-btn youtube">Y</a>
+                <a href="#" class="social-btn discord">D</a>
+                <a href="#" class="social-btn twitch">T</a>
+            </div>
+            <p>En mi canal de YouTube subo gameplay de mis creaciones y tutoriales de desarrollo. En Twitch hago streams creando niveles y jugando con la comunidad. Únete a mi servidor de Discord para estar en contacto directo conmigo y con otros fans.</p>
+        </div>
+    </div>
+
+    <script>
+        function showContent(section) {
+            // Ocultar todos los contenidos primero
+            document.querySelectorAll('.content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Mostrar la sección seleccionada
+            document.getElementById(section).classList.add('active');
+        }
+        
+        // Mostrar la sección de proyectos por defecto al cargar
+        window.onload = function() {
+            showContent('proyectos');
+        };
+    </script>
+</body>
+</html>
